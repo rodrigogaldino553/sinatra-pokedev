@@ -11,7 +11,6 @@ class HomeController < Sinatra::Base
     end
     
     erb :home
-    # JSON.generate(data)
   end
 end
 

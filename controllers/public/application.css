@@ -1,0 +1,42 @@
+*{
+  --primary-color: white;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html{
+  height: 100%;
+}
+
+body{
+  height: 100%;
+}
+
+header{
+  background: white;
+  width: 100%;
+  min-height: 60px;
+  box-shadow: 2px 1px 10px rgba(128, 128, 128, 0.645);
+  padding: 10px 6px;
+  margin-bottom: 20px;
+}
+
+main{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main .box{
+  width: 40vw;
+  height: 80vh;
+  border-radius: 8px;
+  box-shadow: 1px 1px 15px rgba(128, 128, 128, 0.509);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+

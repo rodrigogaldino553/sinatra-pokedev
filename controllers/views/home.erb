@@ -1,11 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" height="100%">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+  <title>Pokedev</title>
+
+  <link rel="stylesheet" href="/application.css">
 </head>
 <body>
+  <header >
+
+  </header>
   <% unless @data.nil? %>
     <div>
       <h3><%= @data['name'] %></h3>
@@ -14,5 +19,11 @@
   <% else %>
     <h1>Hello world!</h1>
   <% end %>
+
+  <main>
+    <div class="box">
+      <h3>Welcome to Pokedev</h3>
+    </div>
+  </main>
 </body>
 </html>
