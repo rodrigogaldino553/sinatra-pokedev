@@ -2,11 +2,11 @@
   
   * build basic project structure
   * make it works
-  - deploy to heroku
-  - build service to request github api
-  - consume github service through api
-  - adapt sinatra to works with views
-  - make it works with views
+  * deploy to heroku
+  * build service to request github api
+  * consume github service through api
+  * adapt sinatra to works with views
+  * make it works with views
   - try to use some css framework like tailwind
 
 
