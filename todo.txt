@@ -1,7 +1,7 @@
 # TODO
   
-  - build basic project structure
-  - make it works
+  * build basic project structure
+  * make it works
   - deploy to heroku
   - build service to request github api
   - consume github service through api
