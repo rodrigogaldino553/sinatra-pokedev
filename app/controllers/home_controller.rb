@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 
-require './services/github_service'
+require './app/services/github_service'
 
 class HomeController < Sinatra::Base
   get '/' do
