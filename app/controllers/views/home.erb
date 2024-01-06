@@ -11,13 +11,17 @@
   <header >
 
   </header>
-  <% unless @data.nil? %>
+  <% unless @data['status'] != 200 %>
     <div>
-      <h3><%= @data['name'] %></h3>
-      <%= "<img src=#{@data['avatar_url']}>" %>
+      <h3><%= @data['result']['name'] %></h3>
+      <%= "<img src=#{@data['result']['avatar_url']}>" %>
     </div>
   <% else %>
-    <h1>Hello world!</h1>
+    <% if @data['status'] == 404 %>
+      <h1>Dev not found!</h1>
+    <% else %>
+      <h1>Something went worong!</h1>
+    <% end %>
   <% end %>
 
   <main>

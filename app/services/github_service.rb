@@ -8,17 +8,21 @@ class GithubService
   API_URL = 'https://api.github.com'
   
   def self.search_dev(username)
+    username = username
+                       .gsub(/^[a-z][a-z0-9\s+]{0,38}$/, '')
+                       .gsub(/\s+/, '')
+                       .gsub(/\+/, '')
     url = "#{API_URL}/users/#{username}"
     uri = URI(url)
     begin
       request = Net::HTTP.get(uri)
       response = JSON.parse(request)
       
-      return nil if response.empty? || response['message'] == 'Not Found'
+      return {'status' => 404} if response.empty? || response['message'] == 'Not Found'
 
-      response
+      {'status' => 200, 'result' => response}
     rescue
-      nil
+      {'status' => 500}
     end
   end
 end

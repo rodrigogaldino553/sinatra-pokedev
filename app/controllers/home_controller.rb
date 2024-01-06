@@ -9,7 +9,7 @@ class HomeController < Sinatra::Base
     unless params[:q].nil?
       @data = GithubService.search_dev(params[:q])
     end
-    
+  
     erb :home
   end
 end
