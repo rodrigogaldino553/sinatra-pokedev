@@ -10,6 +10,10 @@
   - try to use some css framework like materialize ui: https://materializecss.com/getting-started.html
 
 
+# AFTER ALL(refactorings)
+/services/githubservice:11
+  linha que faz a conversão do username, reduz aqueles gsub
+
 
 # UTOPIC
 

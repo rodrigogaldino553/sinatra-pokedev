@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 
-require './services/github_service'
+require './app/services/github_service'
 
 class HomeController < Sinatra::Base
   get '/' do
@@ -9,7 +9,7 @@ class HomeController < Sinatra::Base
     unless params[:q].nil?
       @data = GithubService.search_dev(params[:q])
     end
-    
+  
     erb :home
   end
 end
