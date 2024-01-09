@@ -18,4 +18,8 @@
 # UTOPIC
 
   - Implementate unit tests in sinatra
+      *Scenarios:
+        - Testar as respostas possiveis de request
+        - testar comportamento com e sem parametros
+        - testar caminho feliz primeiro
 
