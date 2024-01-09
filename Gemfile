@@ -19,6 +19,7 @@ gem 'webrick'
 
 group :development do
   gem 'rerun'
+  gem 'pry-byebug'
 end
 
 
