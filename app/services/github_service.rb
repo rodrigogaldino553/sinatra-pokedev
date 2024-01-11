@@ -13,7 +13,7 @@ class GithubService
                        .gsub(/\s+/, '')
                        .gsub(/\+/, '')
     
-    return {'status' => 400, 'message' => 'Invalid username!'} unless username.match?(GITHUB_USERNAME_REGEX) 
+    return {'status' => 400, 'message' => 'Invalid username!', 'color' => 'yellow '} unless username.match?(GITHUB_USERNAME_REGEX) 
 
     url = "#{API_URL}/users/#{username}"
     begin
@@ -21,11 +21,11 @@ class GithubService
       request = Net::HTTP.get(uri)
       response = JSON.parse(request)
 
-      return {'status' => 404, 'message' => 'Dev not found!'} if response.empty? || response['message'] == 'Not Found'
+      return {'status' => 404, 'message' => ' Dev not found!', 'color' => 'red'} if response.empty? || response['message'] == 'Not Found'
 
-      {'status' => 200, 'result' => response}
+      {'status' => 200, 'result' => response, 'color' => 'green'}
     rescue
-      {'status' => 500, 'message' => 'Sorry! There are some problem with our systems'}
+      {'status' => 500, 'message' => 'Sorry! There are some problem with our systems', 'color' => 'red'}
     end
   end
 end

@@ -1,23 +1,20 @@
 <!DOCTYPE html>
-<html lang="en" height="100%">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
-  <title>Pokedev</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= @data['status'] == 200 ? "Pokedev | #{@data['result']['login']}" : "Pokedev" %></title>
 
   <link rel="stylesheet" href="/application.css">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap" rel="stylesheet">
-  <!--Import materialize.css-->
-  <%# <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link type="text/css" rel="stylesheet" href="/css/bulma.min.css"/>
-  <script type="text/javascript" src="js/materialize.min.js" defer></script> %>
+  
 </head>
 <body>
   <!-- header -->
-  <header>
+  <header >
     <div class="content">
     </div>
     <% if !@data.nil? && @data['status'] != 200 %>
@@ -26,13 +23,21 @@
       </div>
     <% end %>
   </header>
-  
-  <!-- content-->
+
+  <!-- content -->
+  <a href="/">Try a new search</a>
   <div class="container">
-    <form action="/" method="get" class="search-box">
-      <input name="q" id="q" placeholder="Dev username">
-      <input type="submit" value="Search">
-    </form>
+    <main>
+      <div class="content">
+        <h3>Welcome to Pokedev</h3>
+        <% if @data['status'] == 200 %>
+          <div class="dev-stats">
+            <h3><%= @data['result']['name'] %></h3>
+            <%= "<img src=#{@data['result']['avatar_url']}>" %>
+          </div>
+        <% end %>
+      </div>
+    </main>
   </div>
 </body>
 </html>
