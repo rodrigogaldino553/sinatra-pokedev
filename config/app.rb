@@ -5,7 +5,7 @@ require 'sinatra'
 require 'sinatra/reloader' if development?
 require 'json'
 
-require './routes'
+require './config/routes'
 
 set :port, 4567 || ENV['PORT']
 

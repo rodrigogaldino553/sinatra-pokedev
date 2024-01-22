@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 
-require './app'
+require './config/app'
 
 
 run Sinatra::Application

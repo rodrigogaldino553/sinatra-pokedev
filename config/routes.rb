@@ -3,7 +3,7 @@
 
 require 'json'
 
-require_relative './app/controllers/home_controller'
+require './app/controllers/home_controller'
 
 use HomeController
 
