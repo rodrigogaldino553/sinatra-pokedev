@@ -12,6 +12,7 @@
   - implements csrf protection
   - Take care of SEO issues, like adding a meta description tag
   - setup google analytics before publish it on linkedin
+  - add buy me a coffe link
 
 
 # AFTER ALL(refactorings)
