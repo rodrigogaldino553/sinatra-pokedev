@@ -23,3 +23,9 @@
         - testar comportamento com e sem parametros
         - testar caminho feliz primeiro
 
+  - CI/CD setup to github
+  - install gems to auto analysis:
+    - linter(rubocop/standar)
+    - tests covering
+    - security covering
+

@@ -25,7 +25,7 @@ class GithubService
 
       {'status' => 200, 'result' => response, 'color' => 'green'}
     rescue
-      {'status' => 500, 'message' => 'Sorry! There are some problem with our systems', 'color' => 'red'}
+      {'status' => 500, 'message' => 'Sorry! We could not complete your search!', 'color' => 'red'}
     end
   end
 end
