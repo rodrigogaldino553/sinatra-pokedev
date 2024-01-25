@@ -1,0 +1,1 @@
+document.addEventListener("DOMContentLoaded",()=>{Array.from(document.querySelectorAll(".navbar-burger")).forEach(n=>{n.addEventListener("click",()=>{const t=document.getElementById(n.dataset.target);n.classList.toggle("is-active"),t.classList.toggle("is-active")})})});
