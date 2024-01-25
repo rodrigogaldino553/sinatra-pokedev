@@ -15,6 +15,7 @@
   - add buy me a coffe link
   - desenvolver um icone
   - procurar referencias para o design
+  - git flow
 
 
 # AFTER ALL(refactorings)
