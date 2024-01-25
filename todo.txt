@@ -8,11 +8,13 @@
   * adapt sinatra to works with views
   * make it works with views
   * try to use some css framework like materialize ui: https://materializecss.com/getting-started.html
-  - Try to use SPA approach, using yield method and layouts pages
-  - implements csrf protection
+  ~ Try to use SPA approach, using yield method and layouts pages
+  * implements csrf protection
   - Take care of SEO issues, like adding a meta description tag
   - setup google analytics before publish it on linkedin
   - add buy me a coffe link
+  - desenvolver um icone
+  - procurar referencias para o design
 
 
 # AFTER ALL(refactorings)
@@ -33,4 +35,6 @@
     - linter(rubocop/standar)
     - tests covering
     - security covering
+
+  - Usar o docker
 

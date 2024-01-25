@@ -1,35 +1,10 @@
-<!DOCTYPE html>
-<html lang="en" height="100%">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
-  <title>Pokedev</title>
-
-  <link rel="stylesheet" href="/css/application.css">
-  <link rel="stylesheet" href="/css/search.css">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap" rel="stylesheet">
-</head>
-<body>
-  <!-- header -->
-  <header>
-    <div class="content">
-    </div>
-    <% if !@data.nil? && @data['status'] != 200 %>
-      <div class="alert <%= @data['color'] %>">
-        <h3><%= @data['message'] %></h3>
-      </div>
-    <% end %>
-  </header>
-  
-  <!-- content-->
+<section class="section">
   <div class="container">
-    <form action="/" method="get" class="search-box">
-      <input name="q" id="q" placeholder="Dev username">
-      <input type="submit" value="Search">
-    </form>
+    <h1 class="title">
+      Hello World
+    </h1>
+    <p class="subtitle">
+      My first website with <strong>Bulma</strong>!
+    </p>
   </div>
-</body>
-</html>
+</section>

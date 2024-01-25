@@ -10,7 +10,7 @@ class HomeController < Sinatra::Base
 
       return erb :result if @data['status'] == 200
     end 
-    erb :home
+    erb :home, layout: :layout
   end
 end
 
