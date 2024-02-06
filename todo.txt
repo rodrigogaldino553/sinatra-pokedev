@@ -23,6 +23,9 @@
     - pesquisar a viabilidade de inserir o mozaico de contribuiçoes
       um caminho é ir atras daqueles com animação que o pessoal coloca no readme profile ou como naquela lib do github worth
   - git flow
+  - add um buy me a coffe button
+  - colocar mais espaço pro footer na home no mobile, quem sabe até colocar ela embaixo de tudo
+  - pensei em fazer uma privacy policy static page tbm
 
 
 # AFTER ALL(refactorings)
