@@ -15,6 +15,13 @@
   - add buy me a coffe link
   - desenvolver um icone
   - procurar referencias para o design
+  - melhorar o estilo trocando as cores e tirando um pouco a cara de material design
+  - customizar a navbar
+  - na tela de resultados
+    - tem um wireframe diretor na pasta de assets, se baseie la, colocando mais informações e links que a api disponibiliza
+    pensei em por tbm aquele mozaico de contribuições do git
+    - pesquisar a viabilidade de inserir o mozaico de contribuiçoes
+      um caminho é ir atras daqueles com animação que o pessoal coloca no readme profile ou como naquela lib do github worth
   - git flow
 
 
