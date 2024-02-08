@@ -29,6 +29,7 @@
   * corrigir alerts
   * extrair mensagens de status para metodo
   - add loading e desabilitar form qnd estiver carregando a pesquisar
+  - settar a branch production para fazer deploy
 
 
 # AFTER ALL(refactorings)
