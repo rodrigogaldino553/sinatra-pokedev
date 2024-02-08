@@ -5,7 +5,10 @@ require 'sinatra'
 require 'json'
 
 # development only
-require 'sinatra/reloader' if development?
+if development?
+  require 'sinatra/reloader'
+  require 'pry-byebug'
+end
 
 
 require './config/routes'

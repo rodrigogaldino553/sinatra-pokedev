@@ -16,6 +16,7 @@
   </head>
   <body>
     <%= erb :'partials/_header' %>
+    <%= erb :'partials/_alerts' if !@data.nil? && @data["status"] != 200 %>
     <div id="content is-fullheight">
       <%= yield %>
     </div>

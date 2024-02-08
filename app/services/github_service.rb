@@ -4,16 +4,11 @@
 require 'net/http'
 require 'json'
 
-class GithubService
+module GithubService
   API_URL = 'https://api.github.com'
-  GITHUB_USERNAME_REGEX = /^[a-z][a-z0-9\s+]{0,38}$/
   
   def self.search_dev(username)
-    username = username
-                       .gsub(/\s+/, '')
-                       .gsub(/\+/, '')
-    
-    return {'status' => 400, 'message' => 'Invalid username!', 'color' => 'yellow '} unless username.match?(GITHUB_USERNAME_REGEX) 
+    return {'status' => 400} unless GithubService.validate_username(username)
 
     url = "#{API_URL}/users/#{username}"
     begin
@@ -21,12 +16,20 @@ class GithubService
       request = Net::HTTP.get(uri)
       response = JSON.parse(request)
 
-      return {'status' => 404, 'message' => ' Dev not found!', 'color' => 'red'} if response.empty? || response['message'] == 'Not Found'
+      return {'status' => 404} if response.empty? || response['message'] == 'Not Found'
 
-      {'status' => 200, 'result' => response, 'color' => 'green'}
+      {'status' => 200, 'result' => response}
     rescue
-      {'status' => 500, 'message' => 'Sorry! We could not complete your search!', 'color' => 'red'}
+      {'status' => 500}
     end
   end
-end
 
+  def self.validate_username(username)
+    # TODO: fix it!
+    github_username_regex = /^[A-Za-z][0-9\s-]{0,38}$/
+    username = username
+                       .gsub(/\s/, '')
+    false unless username.match?(github_username_regex)
+    username
+  end
+end

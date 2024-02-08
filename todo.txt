@@ -26,6 +26,8 @@
   - add um buy me a coffe button
   - colocar mais espaço pro footer na home no mobile, quem sabe até colocar ela embaixo de tudo
   - pensei em fazer uma privacy policy static page tbm
+  - corrigir alerts
+  - extrair mensagens de status para metodo 
 
 
 # AFTER ALL(refactorings)
