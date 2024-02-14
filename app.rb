@@ -13,6 +13,7 @@ elsif test?
   require 'minitest/spec'
   require 'minitest/reporters'
   require 'rack/test'
+  require 'pry-byebug'
 end
 
 
