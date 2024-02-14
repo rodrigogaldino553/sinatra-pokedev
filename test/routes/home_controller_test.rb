@@ -8,7 +8,7 @@ class HomeControllerTest < Minitest::Test
     it 'Can access home page successful' do
       get '/'
       assert last_response.ok?
-      assert_includes last_response.body, 'Find!', 'request successful but dont show the correct content"'
+      assert_includes last_response.body, 'Find!', 'request successful but dont show the correct content'
     end
   end
 end
