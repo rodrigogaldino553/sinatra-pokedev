@@ -8,16 +8,16 @@
 
         <h3 class="has-text-weight-semibold is-size-3 is-primary mt-1 mb-4">Pokedev</h3>
 
-        <form action="/" method="get" class="column is-flex-direction-row is-justify-content-center has-text-centered">
+        <form action="/" method="get" id="user-search" class="column is-flex-direction-row is-justify-content-center has-text-centered">
           <div class="field has-addons has-addons-centered">
             <p class="control has-icons-left">
-              <input class="input" type="text" name="q" placeholder="username...">
+              <input class="input" type="text" id="username" name="q" placeholder="username..." required>
               <span class="icon is-small is-left">
                 <i class="fa-brands fa-github"></i>
               </span>
             </p>
             <p class="control">
-              <button class="button is-primary has-text-weight-semibold">
+              <button id="submit" class="button is-primary has-text-weight-semibold">
                 <span>Find!</span>
               </button>
             </p>

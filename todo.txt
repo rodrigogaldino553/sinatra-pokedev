@@ -28,7 +28,7 @@
   - pensei em fazer uma privacy policy static page tbm
   * corrigir alerts
   * extrair mensagens de status para metodo
-  - add loading e desabilitar form qnd estiver carregando a pesquisar
+  * add loading e desabilitar form qnd estiver carregando a pesquisar
 
 
 # AFTER ALL(refactorings)
