@@ -22,5 +22,14 @@ group :development do
   gem 'pry-byebug'
 end
 
+group :test do # run: ruby -Itest test/**/*_test.rb to execute all tests
+  gem 'minitest'
+  gem 'simplecov', require: false
+  gem 'rack-test'
+  gem 'minitest-reporters'
+  gem 'minitest-spec-rails'
+  gem 'minitest-metadata'
+end
+
 
 

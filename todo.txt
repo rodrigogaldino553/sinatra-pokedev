@@ -29,6 +29,11 @@
   * corrigir alerts
   * extrair mensagens de status para metodo
   * add loading e desabilitar form qnd estiver carregando a pesquisar
+  - implementar tests
+    - configurar gem simplecov de cobertura de tests
+    - configura gem de linter de codigo
+    - configurar aplicação para docker
+    - setup de CI/CD para deploy
 
 
 # AFTER ALL(refactorings)
