@@ -3,7 +3,10 @@
 
 ENV['RACK_ENV'] = 'test'
 require_relative '../app'
+require 'simplecov'
+
 Minitest::Reporters.use! [Minitest::Reporters::SpecReporter.new]
+SimpleCov.start 'rails'
 
 class Minitest::Test
   include Rack::Test::Methods
