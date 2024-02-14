@@ -34,6 +34,7 @@
     - configura gem de linter de codigo
     - configurar aplicação para docker
     - setup de CI/CD para deploy
+    - talvez preciso do rake
 
 
 # AFTER ALL(refactorings)

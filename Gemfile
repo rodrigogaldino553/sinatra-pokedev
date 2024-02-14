@@ -22,7 +22,7 @@ group :development do
   gem 'pry-byebug'
 end
 
-group :test do # run: ruby -Itest test/**/*_test.rb to execute all tests
+group :test do # run: find test -name "*_test.rb" -exec ruby -Itest {} \; to execute all tests
   gem 'minitest'
   gem 'simplecov', require: false
   gem 'rack-test'
