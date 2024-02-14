@@ -1,43 +1,52 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title><%= @data['status'] == 200 ? "Pokedev | #{@data['result']['login']}" : "Pokedev" %></title>
+<!-- content for :head -->
+<% @title = @data['status'] == 200 ? "Pokedev | #{@data['result']['login']}" : "Pokedev" %>
 
-  <link rel="stylesheet" href="/css/application.css">
-  <link rel="stylesheet" href="/css/results.css">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap" rel="stylesheet">
-</head>
-<body>
-  <!-- header -->
-  <header >
-    <div class="content">
+<div class="container is-desktop has-background-white box mt-6">
+  <% if @data['status'] == 200 %>
+    <div class="columns is-flex is-flex-direction-row">
+      <div class="column">
+        <figure class="image is-128x128 is-inline-block-desktop is-inline-block-tablet is-inline-block-mobile">
+          <%= "<img class='is-rounded is-square' src=#{@data['result']['avatar_url']}>" %>
+        </figure>
+      </div>
+      <div class="column is-flex is-flex-direction-column">
+        <ul class="is-flex is-flex-direction-column is-align-items-start">
+          <li><%= "<h3 class='has-text-weight-semibold'>#{@data['result']['name']}</h3>" %></li>
+          <li class="mt-1 columns is-flex is-flex-direction-row">
+            <span><%= "<h3 class='has-text-grey-light'>@#{@data['result']['login']}</h3>" %></span>
+            <span class="ml-4 is-flex centered text-center">
+              <i class="is-flex is-align-items-center fa-sharp fa-solid fa-box-open"></i>
+              <%= "<h3> #{@data['result']['public_repos']}</h3>" %>
+            </span>
+          </li>
+        </ul>
+      </div>
     </div>
-    <% if !@data.nil? && @data['status'] != 200 %>
-      <div class="alert <%= @data['color'] %>">
-        <h3><%= @data['message'] %></h3>
-      </div>
-    <% end %>
-  </header>
+  <% else %>
+    <h1>Something was wrong!</h1>
+  <% end %>
+</div>
 
-  <!-- content -->
-  <a href="/">Try a new search</a>
-  <div class="container">
-    <main>
-      <div class="content">
-        <h3>Welcome to Pokedev</h3>
-        <% if @data['status'] == 200 %>
-          <div class="dev-stats">
-            <h3><%= @data['result']['name'] %></h3>
-            <%= "<img src=#{@data['result']['avatar_url']}>" %>
-          </div>
-        <% end %>
-      </div>
-    </main>
-  </div>
-</body>
-</html>
+
+
+
+
+
+
+
+
+
+<a href="/">Try a new search</a>
+<div class="container">
+  <main>
+    <div class="content">
+      <h3>Welcome to Pokedev</h3>
+      <% if @data['status'] == 200 %>
+        <div class="dev-stats">
+          <h3><%= @data['result']['name'] %></h3>
+          <%= "<img src=#{@data['result']['avatar_url']}>" %>
+        </div>
+      <% end %>
+    </div>
+  </main>
+</div>

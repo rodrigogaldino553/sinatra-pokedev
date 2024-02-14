@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
-    <title>Pokedev</title>
+    <title><%= @title.nil? ? 'Pokedev' : @title %></title>
 
     <!--link rel="stylesheet" href="/css/application.css">
     <link rel="stylesheet" href="/css/search.css"-->
@@ -20,6 +20,7 @@
     <div id="content is-fullheight">
       <%= yield %>
     </div>
+    <script src="/js/main.js" defer></script>
     <script src="https://kit.fontawesome.com/de6a703a91.js" crossorigin="anonymous" async></script>
   </body>
 </html>
