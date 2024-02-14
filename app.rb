@@ -8,6 +8,12 @@ require 'json'
 if development?
   require 'sinatra/reloader'
   require 'pry-byebug'
+elsif test?
+  require 'minitest/autorun'
+  require 'minitest/spec'
+  require 'minitest/reporters'
+  require 'rack/test'
+  require 'pry-byebug'
 end
 
 
