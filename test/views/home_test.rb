@@ -16,5 +16,8 @@ class HomeTest < Minitest::Test
       assert last_response.ok?
       assert_includes last_response.body, 'Try a new search'
     end
+
+    it 'Show correct message for user not found' do
+    end
   end
 end
