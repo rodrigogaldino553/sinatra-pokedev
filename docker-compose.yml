@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: bash -c "bundle exec rackup config.ru -p 9292"
+    ports:
+      - "9292:9292"
+    volumes:
+      - .:/app
+
+  # maybe we could build a container for tests
