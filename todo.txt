@@ -35,6 +35,7 @@
     - configurar aplicação para docker
     - setup de CI/CD para deploy
     - talvez preciso do rake
+  - usar dados mockados para tests
   - implementar tests a/b com flipper
 
 
