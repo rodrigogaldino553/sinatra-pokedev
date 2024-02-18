@@ -7,9 +7,19 @@ services:
       dockerfile: Dockerfile
     stdin_open: true
     tty: true
+    command: bundle exec rackup --host 0.0.0.0 -p 4567
     ports:
       - "4567:4567"
     volumes:
       - .:/app
 
   # maybe we could build a container for tests
+  test:
+    build:
+      context: .
+      dockerfile: Dockerfile.test
+    command: find test -name "*_test.rb" -exec ruby -Itest {} \;
+    volumes:
+      - .:/app
+    environment:
+      - RACK_ENV=test

@@ -14,4 +14,4 @@ RUN bundle install
 EXPOSE 4567
 
 # Comando para iniciar o servidor Sinatra
-CMD ["bundle", "exec", "rackup", "--host", "0.0.0.0", "-p", "4567"]
+# CMD ["bundle", "exec", "rackup", "--host", "0.0.0.0", "-p", "4567"]
