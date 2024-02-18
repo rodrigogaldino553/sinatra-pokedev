@@ -1,4 +1,4 @@
-FROM ruby:latest
+FROM ruby:3.2.2
 
 # Defina o diretório de trabalho dentro do contêiner
 WORKDIR /app
@@ -10,7 +10,7 @@ COPY . ./
 RUN bundle install
 
 # Defina a porta em que o aplicativo Sinatra será executado
-EXPOSE 3000
+EXPOSE 4567
 
 # Comando para iniciar o servidor Sinatra
-# CMD ["bundle", "exec", "ruby", "app.rb"]
+CMD ["bundle", "exec", "rackup", "--host", "0.0.0.0", "-p", "4567"]
