@@ -5,9 +5,9 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    command: bash -c "bundle exec rackup config.ru -p 9292"
+    command: bash -c "bundle exec rackup config.ru -p 3000"
     ports:
-      - "9292:9292"
+      - "3000:3000"
     volumes:
       - .:/app
 
