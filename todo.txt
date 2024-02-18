@@ -39,7 +39,7 @@
   - implementar tests a/b com flipper
 
   * extrair o comando de up do server do dockerfile para o docker compose
-  - adicionar uma rota para heathcheck e configurar no render
+  * adicionar uma rota para heathcheck e configurar no render
   * criar um docker compose service para tests
 
 
