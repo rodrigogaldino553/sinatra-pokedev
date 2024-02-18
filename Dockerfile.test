@@ -1,6 +1,6 @@
 # Use uma imagem base com as dependências necessárias para o ambiente de teste
 FROM ruby:latest
-FROM --platform=linux/amd64 sinatra-pokedev
+FROM --platform=linux/amd64 testesstest/sinatra-pokedev
 
 # Defina o diretório de trabalho
 WORKDIR /app

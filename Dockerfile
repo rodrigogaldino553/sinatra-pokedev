@@ -1,5 +1,5 @@
 FROM ruby:3.2.2
-FROM --platform=linux/amd64 sinatra-pokedev
+FROM --platform=linux/amd64 testesstest/sinatra-pokedev
 
 # Defina o diretório de trabalho dentro do contêiner
 WORKDIR /app
