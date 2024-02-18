@@ -1,0 +1,26 @@
+name: CI/CD
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Build and test
+      run: |
+        docker build -t sinatra-pokedev .
+        docker run sinatra-pokedev find test -name "*_test.rb" -exec ruby -Itest {} \; # Substitua rspec pelo comando de teste do seu aplicativo
+
+    - name: Push Docker image to registry
+      run: |
+        docker tag sinatra-pokedev:latest your-dockerhub-username/sinatra-pokedev:latest
+        echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+        docker push your-dockerhub-username/sinatra-pokedev:latest
+        
