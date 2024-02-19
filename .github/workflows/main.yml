@@ -29,6 +29,10 @@ jobs:
 
       - name: Run tests
         run: docker run sinatra-pokedev find test -name "*_test.rb" -exec ruby -Itest {} \;
+    
+      - name: Set status
+        if: ${{ failure() }}
+        run: exit 1
     # standad&brakeman setup for security & linter analysis
     # - name: Standardrb Check
     #     run: bundle exec standardrb
