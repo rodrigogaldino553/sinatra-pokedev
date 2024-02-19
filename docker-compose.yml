@@ -23,3 +23,14 @@ services:
       - .:/app
     environment:
       - RACK_ENV=test
+
+  # disable it for now
+  # lint:
+  #   build:
+  #     context: .
+  #     dockerfile: Dockerfile.test
+  #   command: bundle exec standard
+  #   volumes:
+  #     - .:/app
+  #   environment:
+  #     - RACK_ENV=test

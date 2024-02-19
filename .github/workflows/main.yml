@@ -19,7 +19,7 @@ jobs:
 
 
       - name: Code analysis by linter
-        run: bundle exec standard
+        run: bundle exec standardrb
 
       # - name: Code security analysis by brakeman
       #   run:
