@@ -18,8 +18,8 @@ jobs:
           repository: ${{ github.event.pull_request.head.repo.full_name }}
 
 
-      # - name: Code analysis by linter
-      #   run:
+      - name: Code analysis by linter
+        run: bundle exec standard
 
       # - name: Code security analysis by brakeman
       #   run:
