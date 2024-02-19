@@ -31,12 +31,12 @@
   * add loading e desabilitar form qnd estiver carregando a pesquisar
   - implementar tests
     * configurar gem simplecov de cobertura de tests
-    - configura gem de linter de codigo
+    * configura gem de linter de codigo
     - configurar brakeman e standadrb
     * configurar aplicação para docker
-    - setup de CI/CD para deploy
+    * setup de CI/CD para deploy
     * talvez preciso do rake
-  - usar dados mockados para tests
+    - usar dados mockados para tests
 
   * extrair o comando de up do server do dockerfile para o docker compose
   * adicionar uma rota para heathcheck e configurar no render
