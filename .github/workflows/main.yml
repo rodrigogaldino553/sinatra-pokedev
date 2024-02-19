@@ -17,15 +17,14 @@ jobs:
           ref: ${{ github.event.pull_request.head.ref }}
           repository: ${{ github.event.pull_request.head.repo.full_name }}
 
-
-      # - name: Code analysis by linter
-      #   run:
-
       # - name: Code security analysis by brakeman
       #   run:
 
       - name: Build docker image
         run: docker build -t sinatra-pokedev .
+
+      - name: Code analysis by linter
+        run: docker run sinatra-pokedev standardrb
 
       - name: Run tests
         run: docker run sinatra-pokedev find test -name "*_test.rb" -exec ruby -Itest {} \;
