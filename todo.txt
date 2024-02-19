@@ -42,6 +42,7 @@
   * adicionar uma rota para heathcheck e configurar no render
   * criar um docker compose service para tests
 
+  - add função de checar validade/disponibilidade de usernames no github para criar ou usar
 
 # AFTER ALL(refactorings)
 /services/githubservice:11
