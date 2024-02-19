@@ -24,13 +24,12 @@ services:
     environment:
       - RACK_ENV=test
 
-  # disable it for now
-  # lint:
-  #   build:
-  #     context: .
-  #     dockerfile: Dockerfile.test
-  #   command: bundle exec standard
-  #   volumes:
-  #     - .:/app
-  #   environment:
-  #     - RACK_ENV=test
+  lint:
+    build:
+      context: .
+      dockerfile: Dockerfile.test
+    command: bundle exec standardrb
+    volumes:
+      - .:/app
+    environment:
+      - RACK_ENV=test
