@@ -10,17 +10,36 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout
-      uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@v3
 
-    - name: Build and test
-      run: |
-        docker build -t testesstest/sinatra-pokedev .
-        docker compose run sinatra-pokedev find test -name "*_test.rb" -exec ruby -Itest {} \; # Substitua rspec pelo comando de teste do seu aplicativo
+      # - name: Code analysis by linter
+      #   run:
 
-    - name: Push Docker image to registry
-      run: |
-        docker tag sinatra-pokedev:latest testesstest/sinatra-pokedev:latest
-        echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-        docker push testesstest/sinatra-pokedev:latest
+      # - name: Code security analysis by brakeman
+      #   run:
+
+      - name: Build docker image
+        run: docker build -t sinatra-pokedev .
+
+      - name: Run tests
+        run: docker run sinatra-pokedev find test -name "*_test.rb" -exec ruby -Itest {} \;
+    # standad&brakeman setup for security & linter analysis
+    # - name: Standardrb Check
+    #     run: bundle exec standardrb
+
+    # - name: Brakeman Check
+    #   run: bundle exec brakeman
+    
+    # docker setup
+    # - name: Build and test
+    #   run: |
+    #     docker build -t testesstest/sinatra-pokedev .
+    #     docker compose run sinatra-pokedev find test -name "*_test.rb" -exec ruby -Itest {} \; # Substitua rspec pelo comando de teste do seu aplicativo
+
+    # - name: Push Docker image to registry
+    #   run: |
+    #     docker tag sinatra-pokedev:latest testesstest/sinatra-pokedev:latest
+    #     echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+    #     docker push testesstest/sinatra-pokedev:latest
         
