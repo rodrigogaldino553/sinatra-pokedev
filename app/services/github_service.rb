@@ -9,18 +9,14 @@ module GithubService
   def self.search_dev(username)
     return {"status" => 400} unless GithubService.validate_username(username)
 
-    url = "#{API_URL}/users/#{username}"
-    begin
-      uri = URI(url)
-      request = Net::HTTP.get(uri)
-      response = JSON.parse(request)
+    user_result = GithubService.search(username)
+    return {"status" => 500} if user_result == 500
+    return {"status" => 404} if user_result.empty? || user_result["message"] == "Not Found"
+    {"status" => 200, "result" => user_result}
+  end
 
-      return {"status" => 404} if response.empty? || response["message"] == "Not Found"
-
-      {"status" => 200, "result" => response}
-    rescue
-      {"status" => 500}
-    end
+  def self.username_checker(username)
+    return username
   end
 
   private
@@ -34,6 +30,16 @@ module GithubService
     username
   end
 
-  def username_checker
+  def self.search(username)
+    url = "#{API_URL}/users/#{username}"
+    begin
+      uri = URI(url)
+      request = Net::HTTP.get(uri)
+      response = JSON.parse(request)
+
+      return response
+    rescue
+      return false
+    end
   end
 end
