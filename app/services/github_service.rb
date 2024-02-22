@@ -16,7 +16,12 @@ module GithubService
   end
 
   def self.username_checker(username)
-    return username
+    return false unless GithubService.validate_username(username)
+    if GithubService.search(username)["message"] == "Not Found"
+      return true
+    else
+      return false
+    end
   end
 
   private

@@ -1,1 +1,12 @@
-<h1>Hello world!</h1>
+<% if !@result.nil? %>
+  <div class="notification is-<%= @result ? "primary" : "danger" %>">
+    <button class="delete"></button>
+    <%= "@#{@username} is #{@result ? "available" : "unavailable"} for use!"  %>
+  </div>
+<script asynce src="/js/bulma_alert.js" defer></script>
+<% end %>
+
+<form action="/username_checker" method="get">
+  <input type="text" name="username" placeholder="@username" required>
+  <input type="submit" value="Check!">
+</form>
