@@ -23,6 +23,8 @@ module GithubService
     end
   end
 
+  private
+
   def self.validate_username(username)
     # TODO: fix it!
     github_username_regex = /^[A-Za-z][0-9\s-]{0,38}$/
@@ -30,5 +32,8 @@ module GithubService
       .gsub(/\s/, "")
     false unless username.match?(github_username_regex)
     username
+  end
+
+  def username_checker
   end
 end

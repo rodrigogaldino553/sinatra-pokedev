@@ -15,4 +15,8 @@ class HomeController < Sinatra::Base
     end
     erb :home, layout: :layout
   end
+
+  get '/username_checker' do
+    erb :username_checker, layout: :layout
+  end
 end

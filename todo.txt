@@ -22,7 +22,7 @@
     pensei em por tbm aquele mozaico de contribuições do git
     - pesquisar a viabilidade de inserir o mozaico de contribuiçoes
       um caminho é ir atras daqueles com animação que o pessoal coloca no readme profile ou como naquela lib do github worth
-  - git flow
+  * git flow
   - add um buy me a coffe button
   - colocar mais espaço pro footer na home no mobile, quem sabe até colocar ela embaixo de tudo
   - pensei em fazer uma privacy policy static page tbm
@@ -43,6 +43,7 @@
   * criar um docker compose service para tests
 
   - add função de checar validade/disponibilidade de usernames no github para criar ou usar
+  - add um popupzinho para destacar o link para a paginade validação de usernames
 
 # AFTER ALL(refactorings)
 /services/githubservice:11
@@ -57,13 +58,12 @@
         - testar comportamento com e sem parametros
         - testar caminho feliz primeiro
 
-  - CI/CD setup to github
-  - install gems to auto analysis:
-    - linter(rubocop/standar)
-    - tests covering
-    - security covering
-
+  * CI/CD setup to github
+  * install gems to auto analysis:
+    * linter(rubocop/standar)
+    * tests covering
+    * security covering
+    
   * Usar o docker
-
   - implementar tests a/b com flipper
 
