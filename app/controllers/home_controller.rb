@@ -16,7 +16,7 @@ class HomeController < Sinatra::Base
     erb :home, layout: :layout
   end
 
-  get '/username_checker' do
+  get "/username_checker" do
     unless params[:username].nil?
       @username = params[:username]
       @result = GithubService.username_checker(@username)

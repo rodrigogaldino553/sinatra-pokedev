@@ -1,0 +1,14 @@
+*on a laptop logged on docker.io
+
+
+- build the image local
+  docker build -t sinatra-pokedev .
+- run linter
+  docker run sinatra-pokedev standadrb
+- run tests
+  docker run sinatra-pokedev find test -name "*_test.rb" -exec ruby -Itest {} \;
+
+- if it's alright you try to build image to upload to docker hub
+  docker build -t testesstest/sinatra-pokedev .
+- push it to docker hub
+  docker push testesstest/sinatra-pokedev

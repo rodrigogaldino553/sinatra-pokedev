@@ -16,15 +16,11 @@ module GithubService
   end
 
   def self.username_checker(username)
-    return false unless GithubService.validate_username(username)
-    if GithubService.search(username)["message"] == "Not Found"
-      return true
-    else
-      return false
-    end
-  end
+    result = !GithubService.validate_username(username) ? false : true
+    result = GithubService.search(username)["message"] == "Not Found" ? true : false
 
-  private
+    result
+  end
 
   def self.validate_username(username)
     # TODO: fix it!
@@ -40,11 +36,9 @@ module GithubService
     begin
       uri = URI(url)
       request = Net::HTTP.get(uri)
-      response = JSON.parse(request)
-
-      return response
+      JSON.parse(request)
     rescue
-      return false
+      false
     end
   end
 end

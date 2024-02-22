@@ -45,6 +45,9 @@
   - add função de checar validade/disponibilidade de usernames no github para criar ou usar
   - add um popupzinho para destacar o link para a paginade validação de usernames
 
+  - implementar mais tests
+  - implementar tests para a nova pagina e os metodos novos
+
 # AFTER ALL(refactorings)
 /services/githubservice:11
   linha que faz a conversão do username, reduz aqueles gsub
