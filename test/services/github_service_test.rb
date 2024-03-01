@@ -9,11 +9,11 @@ class GithubServiceTest < Minitest::Test
     end
 
     # disable this spec for now
-    # it 'Returns 400 for invalid username' do
-    #   search_result = GithubService.search_dev(@usernames[:invalid_username_chars])
+    it "Returns 400 for invalid username" do
+      search_result = GithubService.search_dev(@usernames[:invalid_username_chars])
 
-    #   assert_equal 400, search_result['status']
-    # end
+      assert_equal 400, search_result["status"], "spec has failed"
+    end
 
     it "Returns 404 for user not found" do
       search_result = GithubService.search_dev(@usernames[:invalid_username])
