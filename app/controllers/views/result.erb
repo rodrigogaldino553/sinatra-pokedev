@@ -30,6 +30,42 @@
 
 
 
+<div class="card" style="max-width: 400px; border-radius: 12px; overflow: hidden;">
+  <div class="card-content">
+    <div class="media">
+      <figure class="media-left">
+        <p class="image is-96x96">
+          <img src="<%= @data['result']['avatar_url'] %>" alt="Foto de Perfil" class="is-rounded is-square">
+        </p>
+      </figure>
+      <div class="media-content" style="flex: 1; padding-left: 1rem;">
+        <p class="title is-4"><%= @data['result']['name'] %></p>
+        <p class="subtitle is-6 has-text-grey">@<%= @data['result']['login'] %></p>
+        <div class="flex">
+          <div class="level">
+            <div class="level-left">
+              <span class="icon is-small"><i class="fas fa-building"></i></span>
+              <p class="has-text-weight-semibold"><%= @data['result']['company'] %></p>
+            </div>
+          </div>
+          <div class="level">
+            <div class="level-left">
+              <span class="icon is-small"><i class="fas fa-user-tie"></i></span>
+              <p><%= !@data['result']['hirable'].nil? && @data['result']['hirable'] == true ? 'Unhired' : 'Hired' %></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="padding-top: 1rem;">
+      <p>icon<%= @data['result']['public_repos'] %></p>
+      <p><%= @data['result']['followers'] %></p>
+      <p><%= @data['result']['location'] %></p>
+      <p><%= @data['result']['bio'] %></p>
+      <p><%= @data['result']['twitter_ursername']%></p>
+    </div>
+  </div>
+</div>
 
 
 
