@@ -1,88 +1,17 @@
 <!-- content for :head -->
 <% @title = @data['status'] == 200 ? "Pokedev | #{@data['result']['login']}" : "Pokedev" %>
-
-<div class="container is-desktop has-background-white box mt-6">
-  <% if @data['status'] == 200 %>
-    <div class="columns is-flex is-flex-direction-row">
-      <div class="column">
-        <figure class="image is-128x128 is-inline-block-desktop is-inline-block-tablet is-inline-block-mobile">
-          <%= "<img class='is-rounded is-square' src=#{@data['result']['avatar_url']}>" %>
-        </figure>
-      </div>
-      <div class="column is-flex is-flex-direction-column">
-        <ul class="is-flex is-flex-direction-column is-align-items-start">
-          <li><%= "<h3 class='has-text-weight-semibold'>#{@data['result']['name']}</h3>" %></li>
-          <li class="mt-1 columns is-flex is-flex-direction-row">
-            <span><%= "<h3 class='has-text-grey-light'>@#{@data['result']['login']}</h3>" %></span>
-            <span class="ml-4 is-flex centered text-center">
-              <i class="is-flex is-align-items-center fa-sharp fa-solid fa-box-open"></i>
-              <%= "<h3> #{@data['result']['public_repos']}</h3>" %>
-            </span>
-          </li>
-        </ul>
-      </div>
+<main class="container mx-auto h-full max-w-4xl flex flex-col items-center">
+    <!-- actions -->
+    <div class="flex w-full content-between mt-12">
+        <span>Back</span>
     </div>
-  <% else %>
-    <h1>Something was wrong!</h1>
-  <% end %>
-</div>
 
+    <!-- user card -->
+    <div class="card">
 
-
-
-<div class="card" style="max-width: 400px; border-radius: 12px; overflow: hidden;">
-  <div class="card-content">
-    <div class="media">
-      <figure class="media-left">
-        <p class="image is-96x96">
-          <img src="<%= @data['result']['avatar_url'] %>" alt="Foto de Perfil" class="is-rounded is-square">
-        </p>
-      </figure>
-      <div class="media-content" style="flex: 1; padding-left: 1rem;">
-        <p class="title is-4"><%= @data['result']['name'] %></p>
-        <p class="subtitle is-6 has-text-grey">@<%= @data['result']['login'] %></p>
-        <div class="flex">
-          <div class="level">
-            <div class="level-left">
-              <span class="icon is-small"><i class="fas fa-building"></i></span>
-              <p class="has-text-weight-semibold"><%= @data['result']['company'] %></p>
-            </div>
-          </div>
-          <div class="level">
-            <div class="level-left">
-              <span class="icon is-small"><i class="fas fa-user-tie"></i></span>
-              <p><%= !@data['result']['hirable'].nil? && @data['result']['hirable'] == true ? 'Unhired' : 'Hired' %></p>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
-    <div style="padding-top: 1rem;">
-      <p>icon<%= @data['result']['public_repos'] %></p>
-      <p><%= @data['result']['followers'] %></p>
-      <p><%= @data['result']['location'] %></p>
-      <p><%= @data['result']['bio'] %></p>
-      <p><%= @data['result']['twitter_ursername']%></p>
-    </div>
-  </div>
-</div>
+</main>
+<!-- footer -->
+<footer>
 
-
-
-
-
-
-<a href="/">Try a new search</a>
-<div class="container">
-  <main>
-    <div class="content">
-      <h3>Welcome to Pokedev</h3>
-      <% if @data['status'] == 200 %>
-        <div class="dev-stats">
-          <h3><%= @data['result']['name'] %></h3>
-          <%= "<img src=#{@data['result']['avatar_url']}>" %>
-        </div>
-      <% end %>
-    </div>
-  </main>
-</div>
+</footer>
