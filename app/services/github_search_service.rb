@@ -3,10 +3,16 @@
 require "net/http"
 require "json"
 
-module GithubService
+class GithubSearchService < GithubBase
   API_URL = "https://api.github.com"
+  
+  def call(username)
+    search_dev(username)
+  end
+  
+  private
 
-  def self.search_dev(username)
+  def search_dev(username)
     return {"status" => 400} unless GithubService.validate_username(username)
 
     user_result = GithubService.search(username)
