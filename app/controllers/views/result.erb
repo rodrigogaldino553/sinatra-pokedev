@@ -3,13 +3,36 @@
 <main class="container mx-auto h-full max-w-4xl flex flex-col items-center">
     <!-- actions -->
     <div class="flex w-full content-between mt-12">
-        <span>Back</span>
+        <a href="/">- Try new search</a>
     </div>
 
-    <!-- user card -->
-    <div class="card">
-
-    </div>
+    <% if @data['status'] == 200 %>
+      <!-- user card -->
+      <div class="card rounded-lg border-2 border-gray-300 shadow-md p-2">
+        <!-- card header -->
+        <div class="flex justify-center items-center">
+          <div class="profile-picture">
+            <%= "<img src='#{@data['result']['avatar_url']}' class='w-32 h-32 rounded-full hover:border-2 hover:border-blue-600' alt='#{@data['result']['name']}'>" %>
+          </div>
+          <div class="user-infos ml-4 flex flex-col justify-start items-start">
+            <h3 class="font-semibold text-lg"><%= @data['result']['name'] %></h3>
+            <span class="text-gray-400">@<%= @data['result']['login'] %></span>
+            <div class="user-basics-infos text-gray-400 text-sm space-x-2">
+              <% unless @data['result']['company'].nil? %>
+                <span><i class="fa-solid fa-building mr-2"></i><%= @data['result']['company'] %></span>
+              <% end %>
+              <% unless @data['result']['location'].nil? %>
+                <span><i class="fa-solid fa-location-dot mr-2"></i><%= @data['result']['location'] %></span>
+              <% end %>
+            </div>
+          </div>
+        </div>
+        
+        <!-- card infos -->
+        <div>
+        </div>
+      </div>
+    <% end %>
 </main>
 <!-- footer -->
 <footer>
