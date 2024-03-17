@@ -8,11 +8,11 @@
 
     <% if @data['status'] == 200 %>
       <!-- user card -->
-      <div class="card rounded-lg border-2 border-gray-300 shadow-md p-2">
+      <div class="card rounded-lg border-2 border-gray-300 shadow-md p-2 cursor-pointer">
         <!-- card header -->
-        <div class="flex justify-center items-center">
-          <div class="profile-picture">
-            <%= "<img src='#{@data['result']['avatar_url']}' class='w-32 h-32 rounded-full hover:border-2 hover:border-blue-600' alt='#{@data['result']['name']}'>" %>
+        <div class="flex flex-col sm:flex-row justify-center items-center">
+          <div class="profile-picture" onclick="window.location='<%= @data['result']['html_url'] %>'">
+            <%= "<img src='#{@data['result']['avatar_url']}' class='w-32 h-32 rounded-full' alt='#{@data['result']['name']}'>" %>
           </div>
           <div class="user-infos ml-4 flex flex-col justify-start items-start">
             <h3 class="font-semibold text-lg"><%= @data['result']['name'] %></h3>
@@ -25,11 +25,16 @@
                 <span><i class="fa-solid fa-location-dot mr-2"></i><%= @data['result']['location'] %></span>
               <% end %>
             </div>
+            <%= @data['result']['bio'] %>
           </div>
         </div>
         
         <!-- card infos -->
-        <div>
+        <div class="card-body mt-8 flex flex-col">
+          <div class="repo-infos text-center cursor-ponter">
+            <h1 class="font-bold text-4xl text-center"><%= @data['result']['public_repos'] %></h1>
+            <span class="font-semibold text-2xl text-center">Repositories</span>
+          </div>
         </div>
       </div>
     <% end %>
